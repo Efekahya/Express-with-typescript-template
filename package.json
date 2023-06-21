@@ -1,0 +1,53 @@
+{
+  "name": "express-with-typescript-template",
+  "version": "0.1.0",
+  "description": "Express with typescript template",
+  "engines": {
+    "node": "18.x"
+  },
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc -p .",
+    "start": "node ./dist/index.js",
+    "lint:eslint": "eslint . --ext .ts --max-warnings=0",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "prepare": "husky install"
+  },
+  "author": "EfeKahya",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "chalk": "^4.1.2",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  },
+  "lint-staged": {
+    "*.{ts,js,jsx,tsx}": [
+      "eslint --ignore-path .gitignore --fix",
+      "prettier --ignore-path .gitignore --write"
+    ]
+  }
+}
